@@ -12,7 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->validateCsrfTokens(except: [
-            'n8n/*'
+            'n8n/*',
+            'master/*',
+            'student/*'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

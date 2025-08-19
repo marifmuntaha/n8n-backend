@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Student\Transaction;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property mixed $NIS
  * @property mixed $NAMA_SISWA
+ * @property mixed $STATUS
  */
 class Student extends Model
 {
@@ -31,6 +33,7 @@ class Student extends Model
         'TAGIHAN_BIAYA',
         'BOARDING',
         'SUBBOARDING',
+        'KODE_CABANG'
     ];
 
     public function transaction(): HasMany
