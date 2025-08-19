@@ -22,4 +22,6 @@ class Transaction extends Model
         'user_id',
         'kode_cab'
     ];
+
+    public $timestamps = false;
 }

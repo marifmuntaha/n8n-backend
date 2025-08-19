@@ -2,7 +2,10 @@
 
 namespace App\Models\Student;
 
+use App\Models\Product;
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Transaction extends Model
 {
@@ -28,4 +31,14 @@ class Transaction extends Model
         'KETERANGAN',
         'KODE_UNIT'
     ];
+
+    public function student(): HasOne
+    {
+        return $this->hasOne(Student::class, 'NIS', 'NIS');
+    }
+
+    public function product(): HasOne
+    {
+        return $this->hasOne(Product::class, 'KODE_JENIS_BIAYA', 'KODE_BIAYA');
+    }
 }
